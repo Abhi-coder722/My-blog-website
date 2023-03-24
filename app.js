@@ -14,9 +14,23 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // Targeting the home route and in the function 
-app.get("/", function(req,res){
-  res.render('home',{homeStartingContent:homeStartingContent});//to render the home page
+app.get("/", function (req, res) {//redirecting to home route
+  res.render('home', { StartingContent: homeStartingContent });//to render the home page
 })
+app.get("/about", function (req, res) {//redirecting to the about page
+  res.render('about', { AboutContent: aboutContent });//to render the home page
+})
+app.get("/contact", function (req, res) {//redirecting to the contact page
+  res.render('contact', { contactContent: contactContent });//to render the home page
+})
+app.get("/compose",function(req,res){
+  res.render("compose");
+  })
+  app.post("/compose",function(req,res){
+    var item=req.body.postTitle;
+    console.log(item);
+  })
+
 
 
 
