@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+var arr=[];
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -27,8 +27,16 @@ app.get("/compose",function(req,res){
   res.render("compose");
   })
   app.post("/compose",function(req,res){
+
     var item=req.body.postTitle;
     console.log(item);
+    const post={
+      title: req.body.postTitle,
+      post: req.body.Text1
+    };
+    arr.push(post);
+    console.log(arr);
+    res.redirect("home")
   })
 
 
