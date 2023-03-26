@@ -36,7 +36,6 @@ app.get("/compose",function(req,res){
     };
     arr.push(post);
     console.log(arr);
-    res.redirect("home")
   })
 
 
