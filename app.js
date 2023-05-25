@@ -33,7 +33,7 @@ app.get("/compose",function(req,res){
 app.post("/compose",function(req,res){
   
   var item=req.body.postTitle;
-  
+  // we are gonna update it
   const post={
     title: req.body.postTitle,
     post: req.body.Text1
